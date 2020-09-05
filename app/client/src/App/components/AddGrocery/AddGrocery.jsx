@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
 import sendData from './sendData.js'
+import { useHistory } from 'react-router-dom'
 
 function AddGrocery() {
+    const history = useHistory()
       const [name,setName]=useState('')
       const [quantity,setQunatity]=useState(1)
       const [message,setMessage]=useState((<div></div>))
@@ -32,22 +34,28 @@ function AddGrocery() {
  }
 }
     
-
-   
-
    
     return (
         <section>
-            
-            <form className=" container  w-75  form bg-dark p-3" onSubmit={submitHandler}>
+            <div className="cotainer bg-dark">
+                <button className="btn text-white m-1" style={{backgroundColor:'purple'}} onClick={()=>{history.push('/home')}}>Home</button>
+                <button className="btn text-white m-1 " style={{backgroundColor:'purple'}} onClick={()=>{history.push('/list')}}>Check List</button>
+            </div>
+            <br/>
+            <div className="p-3">
+            <form className=" container  w-75  form  p-3" onSubmit={submitHandler}>
            
-            <div className=" bg-secondary text-white p-1 " >
+            <div className=" text-white p-1 " style={{backgroundColor:"purple"}} >
               <center>
-                <label htmlFor="Name"> Name   :</label>
-                <input className="form-control w-50" type="text" name="Name" id="Name" minLength="3" value={name} onChange={(e)=>{setName(e.target.value)}}/>
+                <div className="form-control w-50 p-1 text-dark">
+                    <label htmlFor="Name"> Name   :</label>
+                    <input  type="text" name="Name" id="Name" minLength="3" value={name} onChange={(e)=>{setName(e.target.value)}}/>
+                </div>
                  <br/>
-                <label htmlFor="Quantity">Quantity   :</label>
-                <input className="form-control w-25" type="Number" name="Quantity" id="Quantity" className="w-25" min="0" value={quantity} onChange={(e)=>{setQunatity(e.target.value)}}/>
+                 <div className="form-control w-25 p-1">
+                    <label htmlFor="Quantity">Quantity   :</label>
+                    <input  type="Number" name="Quantity" id="Quantity" className="w-25" min="0" value={quantity} onChange={(e)=>{setQunatity(e.target.value)}}/>
+                </div>
                 </center>
              </div> 
                 <br/>
@@ -58,6 +66,7 @@ function AddGrocery() {
              </center>
         
             </form>
+            </div>
         </section>
           
     )

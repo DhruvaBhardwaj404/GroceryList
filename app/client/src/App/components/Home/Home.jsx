@@ -9,8 +9,8 @@ function Home() {
     const history = useHistory()
     return (
         <section  className=" container-fluid  h-100 " >
-           <div className=" slide-fwd-center">
-           <div className="container-fluid  bg-white p-5 shadow">
+          
+           <div style={{marginTop:'10vh'}} className="container-fluid  bg-white p-5 shadow">
                 <center>
                 <button className="btn btn-secondary m-1 " onClick={()=>{history.push('/addItem')}}>
                    <b className="display-5"> Add Item To Your List </b>  
@@ -20,7 +20,7 @@ function Home() {
                 <b className="display-5">  Check your List </b>
                 </button>
             </center>
-           </div>
+           
            </div>
        </section>
     )

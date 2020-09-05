@@ -41,6 +41,12 @@ function GroceryList() {
 
     return (
       <section className="container w-75 bg-white">
+        <div className="cotainer bg-dark">
+           <button className="btn text-white m-1" style={{backgroundColor:'purple'}} onClick={()=>{history.push('/home')}}>Home</button>
+           <button className="btn text-white m-1 " style={{backgroundColor:'purple'}} onClick={()=>{history.push('/addItem')}}>Add Item</button>
+        </div>
+        <br/>
+         <div className="cotainer-fluid">
          <table  className="table  table-striped border shadow p-1">
              <thead >
                  <tr className="p-1" key="0">
@@ -55,7 +61,7 @@ function GroceryList() {
              </tbody>
 
          </table>
-
+         </div>
       </ section>
     )
 }
